@@ -32,7 +32,7 @@ public class DemoService {
         List<Transaction> transactionList = transactionRepository.findAllByStatus(Status.SUCCESS);
 
         int NTHREADS = ThreadUtility.getNumOfThread(5, transactionList.size());
-        int range[][] = ThreadUtility.getEfysThreadRanges(NTHREADS, transactionList.size());
+        int range[][] = ThreadUtility.calculateThreadRanges(NTHREADS, transactionList.size());
 
         DemoTransactionThread[] workers = new DemoTransactionThread[NTHREADS];
         HashMap[] maps = new HashMap[NTHREADS];
