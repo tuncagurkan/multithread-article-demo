@@ -17,7 +17,7 @@ public class ThreadUtility {
         return NTHREADS;
     }
 
-    public static int[][] getEfysThreadRanges(int NTHREADS,int listSize){
+    public static int[][] calculateThreadRanges(int NTHREADS,int listSize){
         int limit = listSize / NTHREADS;
         int range[][] = new int[NTHREADS][2];
         int t;
